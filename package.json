@@ -1,0 +1,17 @@
+{
+  "name": "firstapp",
+  "version": "1.0.0",
+  "description": "a node app for practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "j",
+    "start": "npm index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "kunal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  }
+}
