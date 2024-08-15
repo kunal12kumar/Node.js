@@ -1,9 +1,9 @@
 const http=require('http');
 const fs=require('fs');
-const path=require('path');
 const express=require('express');
 const server=express();
 const bodyParser = require('body-parser');
+const product = require('./controller/product.js');
 // Middleware to parse JSON bodies
 server.use(bodyParser.json()); // For parsing application/json
 
@@ -114,3 +114,20 @@ server.use(bodyParser.json()); // For parsing application/json
 // server.listen(3030,()=>{
 //     console.log("server started succesfully")
 // });ṣ
+
+
+// Now on the basis of MVC
+
+
+server.get('/',product.getproducts)
+.get('/getproductsbyid/:id',product.getproductsbyid)
+.post('/postproducts',product.postproducts)
+.put('/updateproducts/:id',product.updateproducts)
+.patch('/patchproducts/:id',product.patchproducts)
+.delete('/deleteproducts/:id',product.deleteproduct);
+
+
+server.listen(3030,()=>{
+    console.log("server created successfully")
+}
+)
